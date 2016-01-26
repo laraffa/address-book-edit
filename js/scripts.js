@@ -1,3 +1,4 @@
+
 function Contact(firstName,lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -23,7 +24,7 @@ Address.prototype.fullAddress = function() {
 
 $(document).ready(function() {
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' +
+    $("#new-addresses").append('<div class="new-address2">' +
                                  '<div class="form-group">' +
                                    '<label for="new-street">Street</label>' +
                                    '<input type="text" class="form-control new-street">' +
@@ -64,7 +65,7 @@ $(document).ready(function() {
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
     $(".contact").last().click(function() {
-      debugger;
+
       $("#show-contact").show();
       $("#show-contact h2").text(newContact.fullName());
       $(".first-name").text(newContact.firstName);
@@ -72,15 +73,28 @@ $(document).ready(function() {
       $("ul#addresses").text("");
       newContact.addresses.forEach(function(address) {
         $("ul#addresses").append(address.fullAddress());
+        });
+      });
+
+      $("input#new-first-name").val("");
+      $("input#new-last-name").val("");
+      $("input.new-street").val("");
+      $("input.new-city").val("");
+      $("input.new-state").val("");
+      $("input.new-typeAdd").val("");
+
+      $(".new-address2").not("#new-addresses").hide();
+
+    });
+
+
+
+
+
+    $("#clickPic").click(function(){
+      $("#pic").fadeIn("slow", function(){
+
       });
     });
 
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input.new-street").val("");
-    $("input.new-city").val("");
-    $("input.new-state").val("");
-    $("input.new-typeAdd").val("");
-
   });
-});

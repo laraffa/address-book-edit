@@ -10,3 +10,7 @@
 .contact:hover {
   text-decoration: underline;
 }
+
+#pic {
+  display: none;
+}
